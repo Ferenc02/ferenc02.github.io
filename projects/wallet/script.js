@@ -8,7 +8,23 @@ clusterApi = "mainnet-beta";
 //Debugging
 //window.solana.isPhantom = false;
 
+let connection;
+
+(async () => {
+  connection = new solanaWeb3.Connection(
+    "https://solana-mainnet.g.alchemy.com/v2/wqTeCXjF3594qMPjVU0WF_idaJQk_Qoq", // Replace with your QuickNode or Alchemy URL
+    "confirmed"
+  );
+  /*
+  const response = await window.solana.connect();
+  const walletAddress = response.publicKey.toString();
+ 
+  const balance = await connection.getBalance(publicKey);
+  console.log(balance);*/
+})();
+
 connectWallet = async () => {
+  console.log(connection);
   if (window.solana.isPhantom) {
     //Connect to phantom wallet
     const response = await window.solana.connect();
@@ -16,15 +32,12 @@ connectWallet = async () => {
 
     test_element.innerHTML = `Has a phantom wallet with address: ${walletAddress}`;
 
-    const connection = new solanaWeb3.Connection(
-      solanaWeb3.clusterApiUrl(clusterApi),
-      "confirmed"
-    );
-    const balance = await connection.getBalance(
-      new solanaWeb3.PublicKey(walletAddress)
-    );
+    const publicKey = new solanaWeb3.PublicKey(walletAddress);
+
+    // Get the balance of the wallet
+    const balance = await connection.getBalance(publicKey);
     const balanceInSOL = balance / solanaWeb3.LAMPORTS_PER_SOL;
-    test_element2.innerHTML = `Balance: ${balanceInSOL}`;
+    test_element2.innerHTML = `Balance: ${balanceInSOL} sol`;
   }
   // if no wallet
   else if (!window.solana.isPhantom) {
