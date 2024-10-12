@@ -1,7 +1,128 @@
+:root {
+  --purple-background-color: #1a002a;
+  --purple-light-background-color: #250d34;
+  --text-color: #fff;
+  --text-darker-color: #5c5c5c;
+}
+
 .title {
   inset: 0;
   margin: auto;
   width: fit-content;
   height: fit-content;
   position: absolute;
+}
+
+.wallet-container {
+  display: flex;
+  max-width: 30.5rem;
+  aspect-ratio: 6/10;
+  background-color: var(--purple-background-color);
+  flex-direction: column;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  padding: 1rem;
+  overflow: hidden;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: var(--text-color);
+}
+.wallet-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: fit-content;
+}
+
+.wallet-address-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-radius: 50rem;
+  background-color: var(--purple-light-background-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+.wallet-address-code-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1rem;
+  position: relative;
+}
+.wallet-address-code {
+  padding: 0.75rem;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+.wallet-address-code-logo {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Ensures perfect centering */
+  border: 3px solid var(--purple-light-background-color);
+  border-radius: 1rem;
+  background: white;
+}
+
+.balance-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 1.5rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+.transaction-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.transaction {
+  background-color: var(--purple-light-background-color);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.transaction-address {
+  max-width: 45%;
+  height: fit-content;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-darker-color);
+  text-align: center;
+}
+.transaction-amount {
+  padding: 1.5rem 0.75rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.transaction-amount.positive::before {
+  content: "+";
+}
+.transaction-amount.positive {
+  color: #00ff00;
+  display: block;
+}
+.transaction-amount.negative::before {
+  content: "-";
+}
+.transaction-amount.negative {
+  color: #ff0000;
+}
+
+.transaction-date {
+  padding: 0.75rem;
+  font-weight: 700;
 }

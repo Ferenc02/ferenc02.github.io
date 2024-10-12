@@ -110,6 +110,12 @@ img:not([alt]) {
 .button:hover {
   background-color: #3c5cd1;
 }
+.grow {
+  transition: transform 0.2s;
+}
+.grow:hover {
+  transform: scale(1.01);
+}
 
 @media screen and (-ms-high-contrast: active) {
   .button {

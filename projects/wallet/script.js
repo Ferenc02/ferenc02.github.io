@@ -1,15 +1,22 @@
 //console.log(solanaWeb3);
-test_element = document.querySelector(".test");
-test_element2 = document.querySelector(".test2");
-test_element3 = document.querySelector(".test3");
+let test_element = document.querySelector(".test");
+let test_element2 = document.querySelector(".test2");
+let test_element3 = document.querySelector(".test3");
+
+let balance_element = document.querySelector(".balance");
+let transactions_container_element = document.querySelector(
+  ".transactions-container"
+);
 
 // Set the cluster API to mainnet-beta, devnet, or testnet, https://solana-mainnet.g.alchemy.com/v2/wqTeCXjF3594qMPjVU0WF_idaJQk_Qoq
-clusterApi = "devnet";
+let clusterApi = "devnet";
 
 //Debugging
 //window.solana.isPhantom = false;
 
 let connection;
+
+let parsed_transactions;
 
 (async () => {
   //Connect to the cluster
@@ -30,7 +37,6 @@ let connection;
 })();
 
 connectWallet = async () => {
-  console.log(connection);
   if (window.solana) {
     let response;
     let walletAddress;
@@ -44,6 +50,7 @@ connectWallet = async () => {
       return;
     }
 
+    generateQRCode(walletAddress);
     test_element.innerHTML = `Has a phantom wallet with address: ${walletAddress}`;
 
     const publicKey = new solanaWeb3.PublicKey(walletAddress);
@@ -51,15 +58,8 @@ connectWallet = async () => {
     // Get the balance of the wallet
     const balance = await connection.getBalance(publicKey);
     const balanceInSOL = balance / solanaWeb3.LAMPORTS_PER_SOL;
-    test_element2.innerHTML = `Balance: ${balanceInSOL} sol`;
 
-    //get transaction history
-    /*
-    const confirmed_transactions =
-      await connection.getConfirmedSignaturesForAddress2(publicKey, {
-        limit: 5,
-      });
-*/
+    balance_element.innerHTML = `${balanceInSOL}`;
     const transactions = await connection.getSignaturesForAddress(publicKey, {
       limit: 20,
     });
@@ -67,9 +67,7 @@ connectWallet = async () => {
       (signature) => signature.signature
     );
 
-    console.log(transactions_signature.length);
-
-    let parsed_transactions = [];
+    parsed_transactions = [];
 
     let transactionsLoaded = false;
 
@@ -96,11 +94,6 @@ connectWallet = async () => {
     if (transactionsLoaded) {
       // document.body.style.backgroundColor = "green";
     }
-
-    console.log(parsed_transactions);
-
-    //test_element3.innerHTML += `<br>Transactions: `;
-    test_element3.innerHTML = 4499985000 / solanaWeb3.LAMPORTS_PER_SOL;
 
     const outputContainer = document.querySelector(".output"); // Replace with your actual container ID
 
@@ -141,7 +134,6 @@ connectWallet = async () => {
         }
       });
     });
-    console.log(outputContainer);
   }
   //If there is no phantom wallet
   else {
@@ -158,3 +150,14 @@ let disconnectWallet = async () => {
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+generateQRCode = (walletAddress) => {
+  let wallet_address_code_element = document.querySelector(
+    ".wallet-address-code"
+  );
+  let qr_code_size = 250;
+  let format = "svg";
+  let color = "250d34";
+  let background = "FFFFFF";
+  wallet_address_code_element.src = `https://api.qrserver.com/v1/create-qr-code/?size=${qr_code_size}x${qr_code_size}&data=${walletAddress}&format=${format}&color=${color}&bgcolor=${background}`;
+};
