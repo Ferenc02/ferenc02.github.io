@@ -1,8 +1,3 @@
-//console.log(solanaWeb3);
-let test_element = document.querySelector(".test");
-let test_element2 = document.querySelector(".test2");
-let test_element3 = document.querySelector(".test3");
-
 let balance_element = document.querySelector(".balance");
 let transactions_container_element = document.querySelector(
   ".transactions-container"
@@ -46,12 +41,16 @@ connectWallet = async () => {
       walletAddress = response.publicKey.toString();
     } catch (error) {
       console.error("Failed to connect to Phantom wallet:", error);
-      test_element.innerHTML = "Failed to connect to Phantom wallet 😔";
+      alert("Failed to connect to Phantom wallet 😔");
       return;
+    }
+    let transactionsLoaded = false;
+    //If transactions are not loaded, show a loading bar
+    if (!transactionsLoaded) {
+      document.body.style.backgroundColor = "red";
     }
 
     generateQRCode(walletAddress);
-    test_element.innerHTML = `Has a phantom wallet with address: ${walletAddress}`;
 
     const publicKey = new solanaWeb3.PublicKey(walletAddress);
 
@@ -59,7 +58,6 @@ connectWallet = async () => {
     const balance = await connection.getBalance(publicKey);
     const balanceInSOL = balance / solanaWeb3.LAMPORTS_PER_SOL;
 
-    balance_element.innerHTML = `${balanceInSOL}`;
     const transactions = await connection.getSignaturesForAddress(publicKey, {
       limit: 20,
     });
@@ -68,13 +66,6 @@ connectWallet = async () => {
     );
 
     parsed_transactions = [];
-
-    let transactionsLoaded = false;
-
-    //If transactions are not loaded, show a loading bar
-    if (!transactionsLoaded) {
-      // document.body.style.backgroundColor = "red";
-    }
 
     //Get the parsed transactions
     for (let i = 0; i < transactions_signature.length; i++) {
@@ -90,13 +81,9 @@ connectWallet = async () => {
     }
     transactionsLoaded = true;
 
-    //If transactions are loaded, remove the loading bar
-    if (transactionsLoaded) {
-      // document.body.style.backgroundColor = "green";
-    }
+    const outputContainer = document.querySelector(".output");
 
-    const outputContainer = document.querySelector(".output"); // Replace with your actual container ID
-
+    let count = 0;
     parsed_transactions.forEach((transactionArray) => {
       transactionArray.forEach((transaction) => {
         const {
@@ -117,33 +104,39 @@ connectWallet = async () => {
           } = transferInstruction.parsed;
 
           // Convert lamports to SOL
-          const amountInSOL = lamports / 1_000_000_000;
+          let amountInSOL = lamports / 1_000_000_000;
 
-          // Create a new paragraph element
-          const p = document.createElement("p");
-
-          // Determine if it's a receive or send
+          // If sent from the wallet, make the amount negative
           if (source === walletAddress) {
-            p.textContent = `Sent ${amountInSOL} SOL on ${date}`;
-          } else if (destination === walletAddress) {
-            p.textContent = `Received ${amountInSOL} SOL on ${date}`;
+            amountInSOL *= -1;
           }
 
-          // Append the paragraph to the output container
-          outputContainer.appendChild(p);
+          balance_element.innerHTML = `${balanceInSOL}`;
+          generateTransactionElement(
+            source,
+            destination,
+            amountInSOL,
+            date,
+            count
+          );
+          count++;
         }
       });
     });
+    //If transactions are loaded, remove the loading bar
+    if (transactionsLoaded) {
+      document.body.style.backgroundColor = "green";
+    }
   }
   //If there is no phantom wallet
   else {
-    test_element.innerHTML = "No Phantom wallet";
+    alert("No Phantom wallet");
   }
 };
 let disconnectWallet = async () => {
   if (window.solana.isPhantom) {
     await window.solana.disconnect();
-    test_element.innerHTML = "Disconnected from wallet";
+    alert("Disconnected from wallet");
   }
 };
 
@@ -151,13 +144,39 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+let generateTransactionElement = (
+  source,
+  destination,
+  amountInSOL,
+  date,
+  count
+) => {
+  let transactions_container_element = document.querySelector(
+    ".transactions-container"
+  );
+  let transaction_element = `<div class="transaction grow pointer " onclick="getTransactionDetails([${count}])">
+          <span class="transaction-amount ${
+            amountInSOL >= 0 ? "positive" : "negative"
+          }">${amountInSOL} SOL</span>
+          <p class="transaction-address">
+           ${amountInSOL >= 0 ? source : destination}
+          </p>
+          <p class="transaction-date">${date.split(",")[0]}</p>
+        </div>`;
+  transactions_container_element.innerHTML += transaction_element;
+};
+
+let getTransactionDetails = (transactionIndex) => {
+  console.log(parsed_transactions[transactionIndex]);
+};
+
 generateQRCode = (walletAddress) => {
   let wallet_address_code_element = document.querySelector(
     ".wallet-address-code"
   );
   let qr_code_size = 250;
   let format = "svg";
-  let color = "250d34";
+  let color = "121212";
   let background = "FFFFFF";
   wallet_address_code_element.src = `https://api.qrserver.com/v1/create-qr-code/?size=${qr_code_size}x${qr_code_size}&data=${walletAddress}&format=${format}&color=${color}&bgcolor=${background}`;
 };
