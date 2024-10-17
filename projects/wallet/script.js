@@ -154,7 +154,7 @@ let generateTransactionElement = (
   let transactions_container_element = document.querySelector(
     ".transactions-container"
   );
-  let transaction_element = `<div class="transaction grow pointer " onclick="getTransactionDetails([${count}])">
+  let transaction_element = `<div class="transaction pointer " onclick="getTransactionDetails([${count}])">
           <span class="transaction-amount ${
             amountInSOL >= 0 ? "positive" : "negative"
           }">${amountInSOL} SOL</span>
@@ -176,7 +176,7 @@ generateQRCode = (walletAddress) => {
   );
   let qr_code_size = 250;
   let format = "svg";
-  let color = "121212";
+  let color = "1e1e1e";
   let background = "FFFFFF";
   wallet_address_code_element.src = `https://api.qrserver.com/v1/create-qr-code/?size=${qr_code_size}x${qr_code_size}&data=${walletAddress}&format=${format}&color=${color}&bgcolor=${background}`;
 };
