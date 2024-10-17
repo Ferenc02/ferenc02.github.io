@@ -3,6 +3,15 @@ let transactions_container_element = document.querySelector(
   ".transactions-container"
 );
 
+let wallet_container_child_element = document.querySelector(
+  ".wallet-container-child"
+);
+let loading_bar_container_element = document.querySelector(
+  ".loading-bar-container"
+);
+
+let loading_spinner_element = document.querySelector(".loading-spinner");
+
 // Set the cluster API to mainnet-beta, devnet, or testnet, https://solana-mainnet.g.alchemy.com/v2/wqTeCXjF3594qMPjVU0WF_idaJQk_Qoq
 let clusterApi = "devnet";
 
@@ -47,7 +56,7 @@ connectWallet = async () => {
     let transactionsLoaded = false;
     //If transactions are not loaded, show a loading bar
     if (!transactionsLoaded) {
-      document.body.style.backgroundColor = "red";
+      loading_spinner_element.classList.add("show-loading-spinner");
     }
 
     generateQRCode(walletAddress);
@@ -125,7 +134,9 @@ connectWallet = async () => {
     });
     //If transactions are loaded, remove the loading bar
     if (transactionsLoaded) {
-      document.body.style.backgroundColor = "green";
+      wallet_container_child_element.classList.remove("not-loaded");
+      loading_bar_container_element.classList.remove("show-loading-bar");
+      loading_spinner_element.classList.remove("show-loading-spinner");
     }
   }
   //If there is no phantom wallet

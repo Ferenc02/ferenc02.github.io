@@ -1,5 +1,5 @@
 :root {
-  --background-color: #1e1e1e;
+  --background-color: hwb(0 12% 88%);
   --light-background-color: #2e2e2e;
   --text-color: #fff;
   --text-darker-color: #5c5c5c;
@@ -52,6 +52,11 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
+}
+
+.not-loaded {
+  filter: blur(1.5rem);
+  background-color: rgba(30, 30, 30, 0.7);
 }
 .wallet-info {
   display: flex;
@@ -187,41 +192,51 @@
   cursor: pointer;
 }
 
+/* Loading Spinner Container */
 .loading-bar-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  background-color: var(--light-background-color);
+
+  background-color: rgba(30, 30, 30, 0.9);
+
   border-radius: 0.25rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   z-index: 2;
   position: absolute;
+
+  width: 0;
+  height: 0;
+  opacity: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: opacity 0.3s;
+}
+.show-loading-bar {
   width: 100%;
   height: 100%;
+  padding: 1rem;
+  opacity: 1;
 }
-.loading-bar {
-  width: 10rem;
-  height: 10rem;
-  background-color: green;
-  border-radius: 100%;
-  position: relative;
-  animation: rotate 1.5s ease-in-out infinite;
+
+/* Circular Spinner */
+.loading-spinner {
+  border: 8px solid var(--light-background-color); /* Light border */
+  border-top: 8px solid var(--accent-color); /* Spinning part */
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  animation: spin 1.5s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+  transition: opacity 0.3s;
 }
-.loading-bar-fill {
+.show-loading-spinner {
   width: 5rem;
-  height: 2rem;
-  background-color: red;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: -1rem;
-  z-index: -1;
+  height: 5rem;
+  opacity: 1;
 }
 
-@keyframes rotate {
+@keyframes spin {
   0% {
     transform: rotate(0deg);
   }
