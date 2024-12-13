@@ -1,0 +1,37 @@
+:root {
+	--background-primary: #f8fafc;
+	--text-primary: #333;
+	--text-secondary: #666;
+	--text-inverse: #fff;
+	--github-color: #151b23;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Inter', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	background-color: var(--background-primary);
+	color: var(--text-primary);
+}
+body {
+	min-height: 100vh;
+}
+.solway-regular {
+	font-family: 'Solway', serif;
+	font-weight: 400;
+	font-style: normal;
+}
+.welcome-title span.word {
+	opacity: 0;
+	display: inline-block; /* Needed for individual animation */
+	transition: opacity 1s ease;
+	font: inherit; /* Ensures spans inherit font styles */
+	line-height: inherit; /* Matches the parent's line height */
+}
+
+.welcome-title span.word.active {
+	opacity: 1;
+}

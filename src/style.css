@@ -1,0 +1,20 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Inter', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+.solway-regular {
+	font-family: 'Solway', serif;
+	font-weight: 400;
+	font-style: normal;
+}
+.welcome-title span.char {
+	opacity: 0;
+	display: inline-block; /* Needed for individual animation */
+	transition: opacity 0.3s ease;
+	font: inherit; /* Ensures spans inherit font styles */
+	line-height: inherit; /* Matches the parent's line height */
+}
