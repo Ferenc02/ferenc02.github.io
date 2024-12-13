@@ -12,3 +12,5 @@
 </main>
 
 <Footer />
+
+export const prerender = true;
