@@ -4,6 +4,8 @@
 	import linkedinSVG from '../images/linkedin.svg';
 	import resumeSVG from '../images/document.svg';
 
+	import { base } from '$app/paths';
+
 	// Typewriter effect
 	const typeWriter = () => {
 		const textElement: any = document.querySelector('.welcome-title');
@@ -87,7 +89,7 @@
 			<img src={linkedinSVG} alt="linkedin logo" class="h-6 w-6 invert filter" />
 		</a>
 		<a
-			href="/resume"
+			href="{base}/about"
 			class="solway-regular transition: flex w-72 items-center justify-around rounded-full bg-red-500 py-2 text-2xl text-white shadow-md duration-300 ease-in-out hover:bg-red-400 md:py-4"
 		>
 			<span class="h-max">Resume</span>

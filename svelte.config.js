@@ -6,10 +6,13 @@ const config = {
 	preprocess: vitePreprocess(),
 	kit: {
 		adapter: adapter({
-			fallback: 'index.html'
+			fallback: '404.html' // Required for single-page apps
 		}),
 		paths: {
-			base: '/ferenc02.github.io' // Replace this with your repository name
+			base: '/ferenc02.github.io' // Base path for GitHub Pages
+		},
+		prerender: {
+			entries: ['*'] // Prerender all pages
 		}
 	}
 };
