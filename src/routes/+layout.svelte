@@ -4,6 +4,8 @@
 
 	import NavBar from './components/_header.svelte';
 	import Footer from './components/_footer.svelte';
+
+	// fade in on load
 </script>
 
 <NavBar />

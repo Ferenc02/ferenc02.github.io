@@ -1,9 +1,16 @@
 <script lang="ts">
 	const email: string = 'Ferenc03@proton.me';
+
+	import { fade } from 'svelte/transition';
 </script>
+
+<svelte:head>
+	<title>Contact Me</title>
+</svelte:head>
 
 <section
 	class="flex h-full w-full flex-col items-center justify-center self-center px-6 text-center align-middle"
+	in:fade={{ duration: 300 }}
 >
 	<h1 class="mb-4 text-4xl font-bold text-gray-800 dark:text-white">Let's Connect!</h1>
 	<p class="mb-8 text-lg text-gray-600 dark:text-gray-300">

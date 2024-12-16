@@ -6,6 +6,8 @@
 
 	import { base } from '$app/paths';
 
+	import { fade } from 'svelte/transition';
+
 	// Typewriter effect
 	const typeWriter = () => {
 		const textElement: any = document.querySelector('.welcome-title');
@@ -56,8 +58,12 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Home | Ferenc Sziraki</title>
+</svelte:head>
+
 <!--  m-12 md:m-32-->
-<div class="absolute top-1/2 -translate-y-1/2 md:ml-8">
+<div class="absolute top-1/2 -translate-y-1/2 md:ml-8" in:fade={{ duration: 300 }}>
 	<div
 		class=" solway-regular welcome-title ml-4 h-min break-words text-2xl font-light text-gray-600 md:w-1/2 md:text-5xl md:leading-relaxed dark:text-white"
 	>
