@@ -2,3 +2,5 @@
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
+
+routes/components/_theme_switcher.svelte

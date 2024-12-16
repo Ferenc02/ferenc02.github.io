@@ -7,7 +7,7 @@
 </script>
 
 <NavBar />
-<main class="min-w-full flex-grow p-2 md:p-4">
+<main class="flex min-w-full flex-grow p-2 md:p-4">
 	{@render children()}
 </main>
 

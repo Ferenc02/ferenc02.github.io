@@ -5,11 +5,9 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter({
-			fallback: '404.html' // Required for single-page apps
-		}),
+		adapter: adapter(),
 		paths: {
-			base: '/ferenc02.github.io' // Base path for GitHub Pages
+			base: process.env.NODE_ENV === 'production' ? '/ferenc02.github.io' : ''
 		},
 		prerender: {
 			entries: ['*'] // Prerender all pages
