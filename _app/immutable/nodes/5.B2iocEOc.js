@@ -1,1 +1,0 @@
-import{a as p,t as r}from"../chunks/disclose-version.Bp1pr7EH.js";import"../chunks/legacy.DKaTdJsz.js";import{$ as a}from"../chunks/runtime.DUznui3C.js";import{h as e}from"../chunks/svelte-head.RY0nGHju.js";var m=r("<p>Welcome to projects</p>");function $(o){var t=m();e(c=>{a.title="Projects"}),p(o,t)}export{$ as component};
