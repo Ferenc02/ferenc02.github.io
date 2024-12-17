@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One Dimensional Perlin Noise</title>
+
+    <link rel="stylesheet" href="../../reset.css" />
+    <link rel="stylesheet" href="../../style.css" />
+
+    <script src="../../p5.js"></script>
+    <script src="script.js" defer></script>
+
+    <style>
+      .slider-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+      }
+
+      label {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      input[type="range"] {
+        width: 80%;
+      }
+
+      #slider-value {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="canvas-container">
+      <h1 class="canvas-title">Interactive Perlin Noise Visualizer</h1>
+      <p class="project-description">
+        This project showcases a one-dimensional Perlin noise graph built using
+        p5.js. Perlin noise is widely used in procedural generation to create
+        realistic and natural patterns. With an interactive slider, you can
+        control the rate of change in the noise, dynamically altering the graph
+        to explore its behavior.
+      </p>
+      <div class="slider-container">
+        <label for="slider">Offset for X</label>
+        <input
+          type="range"
+          id="slider"
+          min="0"
+          max=".5"
+          value="0.01"
+          step="0.005"
+        />
+        <span id="slider-value">0.01</span>
+        <div id="canvas"></div>
+      </div>
+    </main>
+  </body>
+</html>
