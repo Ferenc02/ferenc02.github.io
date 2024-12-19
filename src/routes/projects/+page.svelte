@@ -5,15 +5,13 @@
 
 	import { onMount } from 'svelte';
 
-	let cardStyling = 'mb-8 rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700';
-
 	let folders: string[] = $state([]);
 
 	onMount(async () => {
 		const response = await fetch('/api/folders');
 		if (response.ok) {
 			folders = await response.json();
-			console.log(folders);
+			//console.log(folders);
 		} else {
 			console.error('Failed to fetch folders');
 		}
@@ -41,14 +39,15 @@
 			projects, I explore how algorithms can replicate patterns and phenomena seen in nature, from fractals
 			to emergent behavior, revealing the profound connection between code and the natural world.
 		</p>
-
-		<div class="mt-8 grid grid-cols-1 gap-4">
+		<!--{base}/projects/Nature-Of-Code/{folder}/index.html //If you want to go to the static link-->
+		<!--{base}/projects/{folder} //If you want sveltekit own rendering-->
+		<div class="mt-8 grid grid-cols-3 gap-4">
 			{#each folders as folder}
-				<a href="{base}/projects/{folder}" class={cardStyling}>
-					<h2 class="text-2xl font-bold">{folder}</h2>
-					<p class="text-gray-600 dark:text-gray-400">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					</p>
+				<a
+					href="{base}/projects/{folder}"
+					class=" flex items-center justify-center rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700"
+				>
+					<h2 class="text-xl font-bold">{folder}</h2>
 				</a>
 			{/each}
 		</div>

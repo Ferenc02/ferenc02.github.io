@@ -1,85 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cellular Automata</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cellular Automata</title>
 
-    <link rel="stylesheet" href="../../reset.css" />
-    <link rel="stylesheet" href="../../style.css" />
+		<link rel="stylesheet" href="../reset.css" />
+		<link rel="stylesheet" href="../style.css" />
 
-    <script src="../../p5.js"></script>
-    <script src="script.js" defer></script>
+		<script src="../p5.js"></script>
+		<script src="script.js" defer></script>
 
-    <style>
-      .slider-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 1rem;
-      }
+		<style>
+			.slider-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-top: 1rem;
+			}
 
-      label {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-      }
+			label {
+				font-size: 1.2rem;
+				margin-bottom: 0.5rem;
+			}
 
-      input[type="range"] {
-        width: 80%;
-      }
+			input[type='range'] {
+				width: 80%;
+			}
 
-      #slider-value {
-        font-size: 1.2rem;
-        margin-top: 0.5rem;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="canvas-container">
-      <h1 class="canvas-title">Cellular Automata</h1>
-      <p class="project-description">
-        This script offers an incredible glimpse into the world of elementary
-        cellular automata, a concept introduced by Stephen Wolfram. Cellular
-        automata are not just an abstract computational model—they occur
-        naturally in patterns seen in nature, such as the growth of corals,
-        shell patterns, and even some chemical reactions. The beauty of this
-        script lies in its ability to simulate such phenomena using simple
-        rules, which govern the state of each cell based on its neighbors.
-        Wolfram's work categorized all possible behaviors of cellular automata
-        into 256 unique rules, each producing distinct and often mesmerizing
-        patterns. For example, Rule 126 (the default in this script) creates
-        structured, yet chaotic, evolutions. These patterns reveal how complex
-        structures can emerge from basic, deterministic rules, offering profound
-        insights into both computational theory and natural systems. You can
-        adjust the rule and cell width to see how different patterns emerge. All
-        the 256 rules are explained in detail on Wolfram's official site:
-        <span
-          ><a
-            href="https://mathworld.wolfram.com/ElementaryCellularAutomaton.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            >mathworld.wolfram.com/ElementaryCellularAutomaton.html</a
-          ></span
-        >
-      </p>
+			#slider-value {
+				font-size: 1.2rem;
+				margin-top: 0.5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<main class="canvas-container">
+			<h1 class="canvas-title">Cellular Automata</h1>
+			<p class="project-description">
+				This script offers an incredible glimpse into the world of elementary cellular automata, a
+				concept introduced by Stephen Wolfram. Cellular automata are not just an abstract
+				computational model—they occur naturally in patterns seen in nature, such as the growth of
+				corals, shell patterns, and even some chemical reactions. The beauty of this script lies in
+				its ability to simulate such phenomena using simple rules, which govern the state of each
+				cell based on its neighbors. Wolfram's work categorized all possible behaviors of cellular
+				automata into 256 unique rules, each producing distinct and often mesmerizing patterns. For
+				example, Rule 126 (the default in this script) creates structured, yet chaotic, evolutions.
+				These patterns reveal how complex structures can emerge from basic, deterministic rules,
+				offering profound insights into both computational theory and natural systems. You can
+				adjust the rule and cell width to see how different patterns emerge. All the 256 rules are
+				explained in detail on Wolfram's official site:
+				<span
+					><a
+						href="https://mathworld.wolfram.com/ElementaryCellularAutomaton.html"
+						target="_blank"
+						rel="noopener noreferrer"
+						>mathworld.wolfram.com/ElementaryCellularAutomaton.html</a
+					></span
+				>
+			</p>
 
-      <div class="slider-container">
-        <label for="slider">Rule To Apply</label>
-        <input
-          type="range"
-          id="slider"
-          min="0"
-          max="255"
-          value="126"
-          step="1"
-        />
-        <span id="slider-value">126</span>
+			<div class="slider-container">
+				<label for="slider">Rule To Apply</label>
+				<input type="range" id="slider" min="0" max="255" value="126" step="1" />
+				<span id="slider-value">126</span>
 
-        <label for="slider2">Width of Cells per Column</label>
-        <input type="range" id="slider2" min="1" max="10" value="3" step="1" />
-        <span id="slider-value2">3</span>
-        <div id="canvas"></div>
-      </div>
-    </main>
-  </body>
+				<label for="slider2">Width of Cells per Column</label>
+				<input type="range" id="slider2" min="1" max="10" value="3" step="1" />
+				<span id="slider-value2">3</span>
+				<div id="canvas"></div>
+			</div>
+		</main>
+	</body>
 </html>

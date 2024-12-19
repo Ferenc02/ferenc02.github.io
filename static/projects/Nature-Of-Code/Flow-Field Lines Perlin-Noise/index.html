@@ -1,82 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perlin Noise Lines Flow Field</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Perlin Noise Lines Flow Field</title>
 
-    <link rel="stylesheet" href="../../reset.css" />
-    <link rel="stylesheet" href="../../style.css" />
+		<link rel="stylesheet" href="../reset.css" />
+		<link rel="stylesheet" href="../style.css" />
 
-    <script src="../../p5.js"></script>
-    <script src="script.js" defer></script>
-    <script src="particle.js" defer></script>
+		<script src="../p5.js"></script>
+		<script src="script.js" defer></script>
+		<script src="particle.js" defer></script>
 
-    <style>
-      .slider-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+		<style>
+			.slider-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
 
-      label {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-      }
+			label {
+				font-size: 1.2rem;
+				margin-bottom: 0.5rem;
+			}
 
-      input[type="range"] {
-        width: 80%;
-      }
+			input[type='range'] {
+				width: 80%;
+			}
 
-      #slider-value {
-        font-size: 1.2rem;
-        margin-top: 0.5rem;
-      }
-      canvas {
-        margin-top: 1rem;
+			#slider-value {
+				font-size: 1.2rem;
+				margin-top: 0.5rem;
+			}
+			canvas {
+				margin-top: 1rem;
 
-        /* Modern Box shadow */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      }
-    </style>
-  </head>
-  <body>
-    <main class="canvas-container">
-      <h1 class="canvas-title">Perlin Noise Lines Flow Field</h1>
-      <p class="project-description">
-        This project visualizes a dynamic flow field created using Perlin noise,
-        built with p5.js. Thousands of particles traverse the flow field,
-        leaving behind intricate trails that reflect the influence of Perlin
-        noise on their motion. Use the sliders to adjust the number of particles
-        and the magnitude of the flow field and observe the changes in the flow
-        field's behavior.
-      </p>
+				/* Modern Box shadow */
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			}
+		</style>
+	</head>
+	<body>
+		<main class="canvas-container">
+			<h1 class="canvas-title">Perlin Noise Lines Flow Field</h1>
+			<p class="project-description">
+				This project visualizes a dynamic flow field created using Perlin noise, built with p5.js.
+				Thousands of particles traverse the flow field, leaving behind intricate trails that reflect
+				the influence of Perlin noise on their motion. Use the sliders to adjust the number of
+				particles and the magnitude of the flow field and observe the changes in the flow field's
+				behavior.
+			</p>
 
-      <div class="slider-container">
-        <label for="slider">Number Of Particles</label>
-        <input
-          type="range"
-          id="slider"
-          min="0"
-          max="10000"
-          value="5000"
-          step="500"
-        />
-        <span id="slider-value">500</span>
+			<div class="slider-container">
+				<label for="slider">Number Of Particles</label>
+				<input type="range" id="slider" min="0" max="10000" value="5000" step="500" />
+				<span id="slider-value">500</span>
 
-        <label for="slider2">Magnitude for Flow Field</label>
-        <input
-          type="range"
-          id="slider2"
-          min="0"
-          max="10"
-          value="1"
-          step="0.1"
-        />
-        <span id="slider-value2">1</span>
+				<label for="slider2">Magnitude for Flow Field</label>
+				<input type="range" id="slider2" min="0" max="10" value="1" step="0.1" />
+				<span id="slider-value2">1</span>
 
-        <div id="canvas"></div>
-      </div>
-    </main>
-  </body>
+				<div id="canvas"></div>
+			</div>
+		</main>
+	</body>
 </html>
