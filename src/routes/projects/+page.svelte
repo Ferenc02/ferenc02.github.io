@@ -7,7 +7,7 @@
 
 	let cardStyling = 'mb-8 rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700';
 
-	let folders: string[] = [];
+	let folders: string[] = $state([]);
 
 	onMount(async () => {
 		const response = await fetch('/api/folders');

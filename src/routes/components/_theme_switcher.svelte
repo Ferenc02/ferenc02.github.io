@@ -4,7 +4,7 @@
 	import sunSVG from '../../images/sun.svg';
 	import moonSVG from '../../images/moon.svg';
 
-	let isDark: boolean;
+	let isDark: boolean = $state();
 
 	onMount(() => {
 		isDark = localStorage.getItem('theme') === 'dark';
@@ -22,7 +22,7 @@
 <aside class="">
 	<button
 		class={`flex h-8 w-16 cursor-pointer items-center rounded-full border p-1 shadow-sm transition-colors ${isDark ? 'border-neutral-700 bg-neutral-700 ' : 'border-gray-300 bg-slate-100 '}`}
-		on:click={toggleTheme}
+		onclick={toggleTheme}
 		aria-label="Toggle theme"
 	>
 		<div

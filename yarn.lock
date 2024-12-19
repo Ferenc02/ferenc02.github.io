@@ -721,7 +721,7 @@ eslint-config-prettier@^9.1.0:
   resolved "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-9.1.0.tgz"
   integrity sha512-NSWl5BFQWEPi1j4TjVNItzYV7dZXZ+wP6I6ZhrBGpChQhZRUaElihE9uRRkcbRnNb76UMKDF3r+WTmNcGPKsqw==
 
-eslint-plugin-svelte@^2.36.0:
+eslint-plugin-svelte@^2.45.1:
   version "2.46.1"
   resolved "https://registry.npmjs.org/eslint-plugin-svelte/-/eslint-plugin-svelte-2.46.1.tgz"
   integrity sha512-7xYr2o4NID/f9OEYMqxsEQsCsj4KaMy4q5sANaKkAb6/QeCjYFxRmDm2S3YC3A3pl1kyPZ/syOx/i7LcWYSbIw==
@@ -1984,7 +1984,7 @@ typescript-eslint@^8.0.0:
     "@typescript-eslint/parser" "8.18.0"
     "@typescript-eslint/utils" "8.18.0"
 
-typescript@^5.0.0, typescript@>=4.2.0, "typescript@>=4.8.4 <5.8.0", typescript@>=5.0.0:
+typescript@^5.5.0, typescript@>=4.2.0, "typescript@>=4.8.4 <5.8.0", typescript@>=5.0.0:
   version "5.7.2"
   resolved "https://registry.npmjs.org/typescript/-/typescript-5.7.2.tgz"
   integrity sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==
