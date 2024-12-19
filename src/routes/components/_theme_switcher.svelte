@@ -4,7 +4,7 @@
 	import sunSVG from '../../images/sun.svg';
 	import moonSVG from '../../images/moon.svg';
 
-	let isDark: boolean = $state();
+	let isDark: boolean = $state(false);
 
 	onMount(() => {
 		isDark = localStorage.getItem('theme') === 'dark';
