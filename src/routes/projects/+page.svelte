@@ -3,20 +3,54 @@
 
 	import { base } from '$app/paths';
 
+	import { onMount } from 'svelte';
+
+	let cardStyling = 'mb-8 rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700';
+
+	let folders: string[] = [];
+
+	onMount(async () => {
+		const response = await fetch('/api/folders');
+		if (response.ok) {
+			folders = await response.json();
+			console.log(folders);
+		} else {
+			console.error('Failed to fetch folders');
+		}
+	});
+
 	// get static
+
+	// Get all folders in static/projects/Nature-Of-Code folder
+	// let projects: any = import.meta.glob('../../static/projects/Nature-Of-Code/*/', {
+	// 	eager: true,
+	// 	query: '?raw'
+	// });
 </script>
 
 <svelte:head>
 	<title>Projects</title>
 </svelte:head>
 
-<section
-	class="flex h-full w-full flex-col justify-center px-6 py-12 text-center align-middle"
-	in:fade={{ duration: 300 }}
->
-	<h1 class="py-4 text-4xl font-bold">Nature of Code</h1>
-	<p class="dark:text-gray-40 text-lg text-gray-600 dark:text-gray-400">
-		This is a collection of projects that I have created while following the Nature of Code book by
-		Daniel Shiffman.
-	</p>
+<section class="flex h-full w-full px-6 py-12 text-center align-middle" in:fade={{ duration: 300 }}>
+	<div class="container mx-auto max-w-4xl">
+		<h1 class="py-4 text-4xl font-bold">Nature of Code</h1>
+		<p class="dark:text-gray-40 text-lg text-gray-600 dark:text-gray-400">
+			This collection showcases projects inspired by <b>The Nature of Code</b> by Daniel Shiffman, a
+			foundational resource that bridges the gap between programming and the natural world. Through these
+			projects, I explore how algorithms can replicate patterns and phenomena seen in nature, from fractals
+			to emergent behavior, revealing the profound connection between code and the natural world.
+		</p>
+
+		<div class="mt-8 grid grid-cols-1 gap-4">
+			{#each folders as folder}
+				<a href="{base}/projects/{folder}" class={cardStyling}>
+					<h2 class="text-2xl font-bold">{folder}</h2>
+					<p class="text-gray-600 dark:text-gray-400">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					</p>
+				</a>
+			{/each}
+		</div>
+	</div>
 </section>
