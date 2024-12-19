@@ -24,9 +24,7 @@
 
 			// Set the title color to white if dark mode is enabled
 			isDark = localStorage.getItem('theme') === 'dark';
-			doc.body
-				.querySelector('.canvas-title')
-				?.setAttribute('style', isDark ? 'color: white' : 'color: black');
+			doc.body.querySelector('.canvas-title')?.setAttribute('style', 'color: #a0a0a0');
 
 			// Set iframe height
 			const bodyHeight = doc.body.scrollHeight; // Full height of the body content
