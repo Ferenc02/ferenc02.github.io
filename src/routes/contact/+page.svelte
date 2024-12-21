@@ -2,11 +2,14 @@
 	const email: string = 'Ferenc03@proton.me';
 
 	import { fade } from 'svelte/transition';
+
+	import SEO from '../components/_seo.svelte';
 </script>
 
-<svelte:head>
-	<title>Contact Me</title>
-</svelte:head>
+<SEO
+	title="Contact Me"
+	description="Get in touch with Ferenc S. via LinkedIn or email. Let's connect and discuss projects, ideas, or networking opportunities."
+/>
 
 <section
 	class="flex h-full w-full flex-col items-center justify-center self-center px-6 text-center align-middle"

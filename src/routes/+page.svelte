@@ -62,12 +62,8 @@
 
 <SEO
 	title={'Home'}
-	description={'Welcome to the homepage of Ferenc Sziraki, a passionate web developer dedicated to creating innovative and engaging websites.'}
+	description={'Welcome to the homepage of Ferenc, a passionate web developer dedicated to creating innovative and engaging websites.'}
 />
-
-<!-- <svelte:head>
-	<title>Ferenc Sziraki | Web Developer</title>
-</svelte:head> -->
 
 <!--  m-12 md:m-32-->
 <div class="absolute top-1/2 -translate-y-1/2 md:ml-8" in:fade={{ duration: 300 }}>
@@ -75,8 +71,8 @@
 		class=" solway-regular welcome-title ml-4 h-min break-words text-2xl font-light text-gray-600 md:w-1/2 md:text-5xl md:leading-relaxed dark:text-white"
 	>
 		Hi, I'm
-		<span class="font-medium text-gray-700 dark:text-white"> Ferenc Sziraki.</span> A web developer who
-		loves creating innovative websites. Welcome!
+		<span class="font-medium text-gray-700 dark:text-white"> Ferenc.</span> A web developer who loves
+		creating innovative websites. Welcome!
 	</div>
 
 	<!--Big Social button linking to linkedin-->

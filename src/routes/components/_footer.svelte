@@ -4,6 +4,6 @@
 
 <footer class="flex w-full justify-between self-end p-4 align-middle">
 	<div></div>
-	<p class="text-center">&copy; 2024 Ferenc Sziraki</p>
+	<p class="text-center">&copy; 2024 Ferenc</p>
 	<ThemeSwitcher />
 </footer>

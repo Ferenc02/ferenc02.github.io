@@ -3,11 +3,14 @@
 	let cardStyling = 'mb-8 rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700';
 
 	import { fade } from 'svelte/transition';
+
+	import SEO from '../components/_seo.svelte';
 </script>
 
-<svelte:head>
-	<title>About Me</title>
-</svelte:head>
+<SEO
+	title="About Me"
+	description="Learn more about Ferenc S, a blockchain developer with experience in Solidity, TypeScript, JavaScript, and React."
+/>
 
 <section class="flex h-full w-full px-6 py-12 align-middle" in:fade={{ duration: 300 }}>
 	<div class="container mx-auto max-w-4xl">
@@ -19,14 +22,14 @@
 				<p class="py-2 text-left text-lg text-gray-600 dark:text-gray-400">
 					<img
 						src="https://avatars.githubusercontent.com/u/182554237?v=4"
-						alt="Ferenc Sziraki"
+						alt="Ferenc S"
 						class="float-left mr-4 h-32 w-32 rounded-full shadow-md"
 					/>
-					Hi, my name is Ferenc Sziraki, and I am a passionate blockchain developer currently studying
-					at Medieinstitutet. With a strong foundation in IT support, system management, and programming,
-					I am dedicated to building innovative and secure solutions using blockchain technology. Over
-					the course of my studies, I have gained hands-on experience with tools and technologies such
-					as <b>Solidity, TypeScript, JavaScript, and React.</b> My previous roles in IT have also equipped
+					Hi, my name is Ferenc, and I am a passionate blockchain developer currently studying at Medieinstitutet.
+					With a strong foundation in IT support, system management, and programming, I am dedicated
+					to building innovative and secure solutions using blockchain technology. Over the course of
+					my studies, I have gained hands-on experience with tools and technologies such as
+					<b>Solidity, TypeScript, JavaScript, and React.</b> My previous roles in IT have also equipped
 					me with valuable problem-solving skills, the ability to collaborate effectively within a team,
 					and a knack for quickly adapting to new systems.
 				</p>
