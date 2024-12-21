@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Simple Fractal Tree</title>
+
+		<link rel="stylesheet" href="../reset.css" />
+		<link rel="stylesheet" href="../style.css" />
+
+		<script src="../p5.js"></script>
+		<script src="script.js" defer></script>
+
+		<style>
+			.slider-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-top: 1rem;
+			}
+
+			label {
+				font-size: 1.2rem;
+				margin-bottom: 1rem;
+			}
+
+			input[type='range'] {
+				width: 80%;
+			}
+
+			#slider-value {
+				font-size: 1.2rem;
+				margin: 0.5rem 0;
+			}
+		</style>
+	</head>
+	<body>
+		<main class="canvas-container">
+			<h1 class="canvas-title">Simple Fractal Tree</h1>
+			<p class="project-description">
+				This script generates fractal trees, a stunning representation of recursive geometry found
+				in nature. Fractal trees are created through a recursive process, where each branch splits
+				into smaller branches, forming a complex structure. The beauty of these trees lies in their
+				self-similar patterns, which are evident at every scale of the tree's growth. As the
+				branches grow and split, they mimic the branching structures seen in nature, such as trees,
+				blood vessels, and even lightning bolts. Fractals in nature optimize space and resources, as
+				seen in the way plants and trees distribute branches to maximize sunlight capture. This
+				recursive structure is also present in phenomena like river systems, the branching of
+				neurons, and the formation of coral reefs, all of which rely on fractal geometry to enhance
+				efficiency and resilience. This fractal tree was coded with p5.js, using Perlin noise to
+				generate the length and position of each tree for a more natural-looking forest generation.
+				By incorporating Perlin noise, the trees are positioned in random, yet smooth patterns,
+				creating a more organic feel and avoiding rigid, uniform placements. Read more about fractal
+				trees and patterns in nature:
+				<span
+					><a
+						href="https://en.wikipedia.org/wiki/Fractal_canopy"
+						target="_blank"
+						rel="noopener noreferrer"
+						>https://en.wikipedia.org/wiki/Fractal_canopy</a
+					>
+					<a
+						href="https://en.wikipedia.org/wiki/Patterns_in_nature"
+						target="_blank"
+						rel="noopener noreferrer"
+						>https://en.wikipedia.org/wiki/Patterns_in_nature</a
+					>
+				</span>
+			</p>
+
+			<div class="slider-container">
+				<label for="slider">Branch Angle (Deg)</label>
+				<input type="range" id="slider" min="0" max="360" value="30" step="1" />
+				<span id="slider-value">30</span>
+
+				<label for="reset-button">Generate New Trees:</label>
+				<button id="reset-button" class="button">Generate</button>
+				<div id="canvas"></div>
+			</div>
+		</main>
+	</body>
+</html>
