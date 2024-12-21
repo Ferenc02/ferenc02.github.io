@@ -35,7 +35,8 @@
 
 	onMount(async () => {
 		currentUrl = $page.params.id;
-		const response = await fetch('/api/folders');
+		let testParam = $page.params.test;
+		const response = await fetch(`${base}/api/folders`);
 		if (response.ok) {
 			folders = await response.json();
 
@@ -70,7 +71,7 @@
 		<iframe
 			bind:this={iframeRef}
 			onload={customizeIframe}
-			src="/projects/Nature-Of-Code/{currentUrl}/index.html"
+			src="{base}/projects/Nature-Of-Code/{currentUrl}/index.html"
 			class="h-screen w-full shadow-2xl"
 			title="Project Page"
 		></iframe>

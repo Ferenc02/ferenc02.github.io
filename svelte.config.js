@@ -10,7 +10,9 @@ const config = {
 			base: process.env.NODE_ENV === 'production' ? '/ferenc02.github.io' : ''
 		},
 		prerender: {
-			entries: ['*'] // Prerender all pages
+			crawl: true,
+			handleHttpError: 'ignore',
+			entries: ['*', '/projects/[id]'] // Prerender all pages
 		}
 	}
 };
