@@ -5,8 +5,7 @@ import { base } from '$app/paths';
 
 export const prerender = true;
 
-const projectName = '';
-
+const projectName = 'Nature-Of-Code';
 export const GET: RequestHandler = async () => {
 	//const staticDir = path.join(process.cwd(), 'static/projects/Nature-Of-Code');
 	//const staticDir = path.resolve(`${base}/projects/Nature-Of-Code`);

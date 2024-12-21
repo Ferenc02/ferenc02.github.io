@@ -12,6 +12,7 @@
 
 	let iframeElement = $state('');
 
+	// svelte-ignore non_reactive_update
 	let iframeRef: HTMLIFrameElement | null = null;
 
 	let currentUrl = $state('');
@@ -36,7 +37,7 @@
 	onMount(async () => {
 		currentUrl = $page.params.id;
 		let testParam = $page.params.test;
-		const response = await fetch(`${base}/api/folders`);
+		const response = await fetch(`${base}/api/nature of code folders`);
 		if (response.ok) {
 			folders = await response.json();
 

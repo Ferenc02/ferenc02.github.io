@@ -8,7 +8,7 @@
 	let folders: string[] = $state([]);
 
 	onMount(async () => {
-		const response = await fetch(`${base}/api/folders`);
+		const response = await fetch(`${base}/api/nature of code folders`);
 		if (response.ok) {
 			folders = await response.json();
 			//console.log(folders);

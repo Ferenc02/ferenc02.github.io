@@ -8,6 +8,8 @@
 
 	import { fade } from 'svelte/transition';
 
+	import SEO from './components/_seo.svelte';
+
 	// Typewriter effect
 	const typeWriter = () => {
 		const textElement: any = document.querySelector('.welcome-title');
@@ -58,9 +60,14 @@
 	});
 </script>
 
-<svelte:head>
-	<title>Home | Ferenc Sziraki</title>
-</svelte:head>
+<SEO
+	title={'Home'}
+	description={'Welcome to the homepage of Ferenc Sziraki, a passionate web developer dedicated to creating innovative and engaging websites.'}
+/>
+
+<!-- <svelte:head>
+	<title>Ferenc Sziraki | Web Developer</title>
+</svelte:head> -->
 
 <!--  m-12 md:m-32-->
 <div class="absolute top-1/2 -translate-y-1/2 md:ml-8" in:fade={{ duration: 300 }}>

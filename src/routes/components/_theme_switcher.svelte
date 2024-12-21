@@ -8,7 +8,6 @@
 
 	onMount(() => {
 		isDark = localStorage.getItem('theme') === 'dark';
-		document.title = 'Ferenc Sziraki | Web Developer';
 	});
 
 	// Toggle theme between dark and light
