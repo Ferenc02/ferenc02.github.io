@@ -22,10 +22,13 @@
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={image} />
-	{@html `  <script type="application/ld+json">{
+	{@html `  <script type="application/ld+json">
+	{
      "@context": "https://schema.org",
      "@type": "Website",
-     "name": "${title} | ,
-     "url": "https//${$page.url.pathname}",
-     "logo": ${image}  }</script>`}
+     "name": "${title} | ",
+     "url": "https://ferenc02.github.io/",
+     "logo": "${image}"  }
+	 </script>
+	 `}
 </svelte:head>
