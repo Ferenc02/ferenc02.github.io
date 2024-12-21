@@ -9,7 +9,7 @@
 
 <SEO
 	title="About Me"
-	description="Learn more about Ferenc S, a blockchain developer with experience in Solidity, TypeScript, JavaScript, and React."
+	description="Learn more about Ferenc, a blockchain developer with experience in Solidity, TypeScript, JavaScript, and React."
 />
 
 <section class="flex h-full w-full px-6 py-12 align-middle" in:fade={{ duration: 300 }}>
@@ -22,7 +22,7 @@
 				<p class="py-2 text-left text-lg text-gray-600 dark:text-gray-400">
 					<img
 						src="https://avatars.githubusercontent.com/u/182554237?v=4"
-						alt="Ferenc S"
+						alt="Github avatar of Ferenc"
 						class="float-left mr-4 h-32 w-32 rounded-full shadow-md"
 					/>
 					Hi, my name is Ferenc, and I am a passionate blockchain developer currently studying at Medieinstitutet.

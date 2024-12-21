@@ -6,6 +6,8 @@
 
 	import { base } from '$app/paths';
 
+	import SEO from '../../components/_seo.svelte';
+
 	let folders: string[] = $state([]);
 
 	let foundFolder = $state(false);
@@ -17,20 +19,26 @@
 
 	let currentUrl = $state('');
 
-	let isDark: boolean = $state(false);
+	let seoTitle = $state('');
+	let seoDescription = $state('');
 
 	function customizeIframe() {
 		if (iframeRef?.contentWindow && iframeRef?.contentDocument) {
 			const doc = iframeRef.contentDocument;
 
-			// Set the title color to white if dark mode is enabled
-			isDark = localStorage.getItem('theme') === 'dark';
 			doc.body.querySelector('.canvas-title')?.setAttribute('style', 'color: #a0a0a0');
 
 			// Set iframe height
 			const bodyHeight = doc.body.scrollHeight; // Full height of the body content
 			const htmlHeight = doc.documentElement.scrollHeight; // Full height of the HTML content
 			iframeRef.style.height = `${Math.max(bodyHeight, htmlHeight)}px`;
+
+			seoTitle = doc.title;
+
+			//! Find better way to get description
+
+			seoDescription = doc.querySelector('meta[name="description"]')?.getAttribute('content') || '';
+			// seoDescription = doc.querySelector('p')?.textContent || '';
 		}
 	}
 
@@ -52,6 +60,7 @@
 	});
 </script>
 
+<SEO title={seoTitle} description={seoDescription} />
 <section
 	class="relative flex h-full w-full flex-col items-center justify-center self-center text-center align-middle md:px-6"
 	in:fade={{ duration: 300 }}

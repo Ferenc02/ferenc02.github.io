@@ -8,7 +8,7 @@
 
 <SEO
 	title="Contact Me"
-	description="Get in touch with Ferenc S. via LinkedIn or email. Let's connect and discuss projects, ideas, or networking opportunities."
+	description="Get in touch with Ferenc. via LinkedIn or email. Let's connect and discuss projects, ideas, or networking opportunities."
 />
 
 <section

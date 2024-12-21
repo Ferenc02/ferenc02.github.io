@@ -7,6 +7,8 @@
 
 	let folders: string[] = $state([]);
 
+	import SEO from '../components/_seo.svelte';
+
 	onMount(async () => {
 		const response = await fetch(`${base}/api/nature of code folders`);
 		if (response.ok) {
@@ -26,9 +28,10 @@
 	// });
 </script>
 
-<svelte:head>
-	<title>Projects</title>
-</svelte:head>
+<SEO
+	title="Projects"
+	description="This collection showcases projects coded by Ferenc. Projects ranging from fractals, website design, and more."
+/>
 
 <section class="flex h-full w-full px-6 py-12 text-center align-middle" in:fade={{ duration: 300 }}>
 	<div class="container mx-auto max-w-4xl">
