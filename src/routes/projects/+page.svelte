@@ -82,6 +82,13 @@
 				>
 					<h2 class="text-xl font-bold">Travel Plan</h2>
 				</a>
+				<a
+					href="https://codejournal-dev.vercel.app/"
+					target="_blank"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 dark:bg-neutral-700"
+				>
+					<h2 class="text-xl font-bold">Blog/Learning Website (work in progress)</h2>
+				</a>
 			</div>
 		</div>
 	</section>
