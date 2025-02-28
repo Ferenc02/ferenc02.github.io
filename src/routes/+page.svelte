@@ -89,7 +89,7 @@
 		</a>
 
 		<a
-			href="https://www.linkedin.com/in/ferenc-s-324378244/"
+			href="https://www.linkedin.com/in/ferenc02/"
 			class="solway-regular transition: flex w-72 items-center justify-around rounded-full bg-blue-500 py-2 text-2xl text-white shadow-md duration-300 ease-in-out hover:bg-blue-400 md:py-4"
 			target="_blank"
 		>

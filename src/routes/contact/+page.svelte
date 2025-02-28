@@ -23,7 +23,7 @@
 
 	<!-- LinkedIn Button -->
 	<a
-		href="https://www.linkedin.com/in/ferenc-s-324378244/"
+		href="https://www.linkedin.com/in/ferenc02/"
 		target="_blank"
 		class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition hover:bg-blue-700"
 	>
