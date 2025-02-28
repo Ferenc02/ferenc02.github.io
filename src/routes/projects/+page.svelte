@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
+	import githubSVG from '../../images/github-mark.svg';
 
 	import { base } from '$app/paths';
 
@@ -39,31 +40,50 @@
 		in:fade={{ duration: 300 }}
 	>
 		<div class="container mx-auto max-w-4xl">
-			<h1 class="py-4 text-4xl font-bold">Projects</h1>
+			<h1 class="pb-4 text-4xl font-bold">Many of my projects are open-source</h1>
 			<p class="dark:text-gray-40 text-lg text-gray-600 dark:text-gray-400">
-				Here are some other projects I've worked on and contributed to. These projects range from
-				web development to blockchain and more. Feel free to check them out on GitHub.
+				Here are some of the open-source projects I've worked on and contributed to. These projects
+				range from web development to blockchain and more. Feel free to check them out on GitHub.
+			</p>
+			<div class="button-container mt-8 flex justify-center">
+				<a
+					href="https://github.com/Ferenc02"
+					target="_blank"
+					class="
+					flex items-center justify-center
+					
+					rounded-lg bg-white px-6 py-3 font-bold text-black shadow-md transition-transform hover:scale-105 dark:bg-neutral-700 dark:text-white"
+				>
+					<img src={githubSVG} alt="GitHub" class="mr-2 inline-block h-6 w-6 filter dark:invert" />
+					<span>GitHub</span>
+				</a>
+			</div>
+
+			<h1 class="mt-8 py-4 text-4xl font-bold">Projects</h1>
+			<p class="dark:text-gray-40 text-lg text-gray-600 dark:text-gray-400">
+				Here are some larger projects I've worked on. These projects range from web development to
+				blockchain and more.
 			</p>
 
 			<div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 				<a
 					href="https://github.com/Ferenc02/Westcoast-Education"
 					target="_blank"
-					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 dark:bg-neutral-700"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
 				>
 					<h2 class="text-xl font-bold">Westcoast-Education</h2>
 				</a>
 				<a
 					href="https://github.com/Ferenc02/Block-Explorer"
 					target="_blank"
-					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 dark:bg-neutral-700"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
 				>
 					<h2 class="text-xl font-bold">Block-Explorer</h2>
 				</a>
 				<a
 					href="https://github.com/Ferenc02/WasmFusion-PDF-Backend"
 					target="_blank"
-					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 dark:bg-neutral-700"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
 				>
 					<h2 class="text-xl font-bold">WasmFusion-PDF (work in progress)</h2>
 				</a>
@@ -71,21 +91,21 @@
 				<a
 					href="https://github.com/Ferenc02/bcu24d-agila-block-the-chain-group3"
 					target="_blank"
-					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 dark:bg-neutral-700"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
 				>
 					<h2 class="text-xl font-bold">Blockchain for dummies 101</h2>
 				</a>
 				<a
 					href="https://github.com/K3mp3/JS-gruppuppgift"
 					target="_blank"
-					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 dark:bg-neutral-700"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
 				>
 					<h2 class="text-xl font-bold">Travel Plan</h2>
 				</a>
 				<a
 					href="https://codejournal-dev.vercel.app/"
 					target="_blank"
-					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 dark:bg-neutral-700"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
 				>
 					<h2 class="text-xl font-bold">Blog/Learning Website (work in progress)</h2>
 				</a>
@@ -111,7 +131,7 @@
 				{#each folders as folder}
 					<a
 						href="{base}/projects/{folder}"
-						class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 dark:bg-neutral-700"
+						class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
 					>
 						<h2 class="text-xl font-bold">{folder}</h2>
 					</a>
