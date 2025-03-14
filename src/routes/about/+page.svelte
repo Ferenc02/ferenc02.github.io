@@ -27,18 +27,20 @@
 					/>
 					Hi, my name is Ferenc, and I am a passionate blockchain developer currently studying at Medieinstitutet.
 					With a strong foundation in IT support, system management, and programming, I am dedicated
-					to building innovative and secure solutions using blockchain technology. Over the course of
-					my studies, I have gained hands-on experience with tools and technologies such as
+					to building innovative and secure solutions using blockchain technology and building responsive
+					web applications. Over the course of my studies, I have gained hands-on experience with tools
+					and technologies such as
 					<b>Solidity, TypeScript, JavaScript, and React.</b> My previous roles in IT have also equipped
 					me with valuable problem-solving skills, the ability to collaborate effectively within a team,
 					and a knack for quickly adapting to new systems.
 				</p>
 				<p class="py-2 text-left text-lg text-gray-600 dark:text-gray-400">
-					I am especially interested in the development of decentralized applications (dApps) and
-					smart contracts, and I am eager to contribute to projects that push the boundaries of
-					blockchain technology. At the same time, I see every new opportunity as a chance to expand
-					my technical knowledge and learn from others in a collaborative and forward-thinking
-					environment.
+					I am especially interested in the development of dynamic and responsive web applications
+					and exploring innovative technologies to enhance user experience. I am eager to contribute
+					to projects that push the boundaries of web development and create seamless, efficient,
+					and accessible solutions. At the same time, I view every new opportunity as a chance to
+					expand my technical knowledge and collaborate with others in a forward-thinking,
+					innovative environment.
 				</p>
 				<p class="py-2 text-left text-lg text-gray-600 dark:text-gray-400">
 					I am currently seeking new opportunities to apply my skills and knowledge in blockchain

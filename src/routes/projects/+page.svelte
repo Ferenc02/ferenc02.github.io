@@ -93,14 +93,14 @@
 					target="_blank"
 					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
 				>
-					<h2 class="text-xl font-bold">Blockchain for dummies 101</h2>
+					<h2 class="text-xl font-bold">Blockchain for dummies 101 (Group Project)</h2>
 				</a>
 				<a
 					href="https://github.com/K3mp3/JS-gruppuppgift"
 					target="_blank"
 					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
 				>
-					<h2 class="text-xl font-bold">Travel Plan</h2>
+					<h2 class="text-xl font-bold">Travel Plan (Group Project)</h2>
 				</a>
 				<a
 					href="https://codejournal-dev.vercel.app/"
@@ -108,6 +108,74 @@
 					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
 				>
 					<h2 class="text-xl font-bold">Blog/Learning Website (work in progress)</h2>
+				</a>
+			</div>
+		</div>
+	</section>
+	<section
+		class="flex h-full w-full px-6 py-12 text-center align-middle"
+		in:fade={{ duration: 300 }}
+	>
+		<div class="container mx-auto max-w-4xl">
+			<h1 class="py-4 text-4xl font-bold">Archives</h1>
+			<p class="dark:text-gray-40 text-lg text-gray-600 dark:text-gray-400">
+				Here are some of the projects I've worked on in the past. These projects contains a variety
+				of web development projects, from websites to web applications, also some Java projects.
+				Most of these projects were made during my time at <b>Lindholmens Tekniska Gymnasium</b> and
+				was stored on my old GitHub account. The commit history is not accurate, as I've moved the projects
+				to my current GitHub account.
+			</p>
+			<div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+				<a
+					href="https://github.com/Ferenc02/Java-2D-Game-Engine-Archive"
+					target="_blank"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
+				>
+					<h2 class="text-xl font-bold">Java 2D Game Engine</h2>
+				</a>
+				<a
+					href="https://github.com/Ferenc02/Java-Project-And-Assignments-Archive-"
+					target="_blank"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
+				>
+					<h2 class="text-xl font-bold">Java Projects and Assignments</h2>
+				</a>
+
+				<a
+					href="https://github.com/Ferenc02/Fancy-Restaurant-Mockup-Website-Archive"
+					target="_blank"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
+				>
+					<h2 class="text-xl font-bold">Fancy Restaurant Mockup Website</h2>
+				</a>
+				<a
+					href="https://github.com/Ferenc02/Coderly-Mockup-Website-Archive"
+					target="_blank"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
+				>
+					<h2 class="text-xl font-bold">Courses Mockup Website</h2>
+				</a>
+				<a
+					href="https://github.com/Ferenc02/Loveveil-Website-Mockup-Archive"
+					target="_blank"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
+				>
+					<h2 class="text-xl font-bold">Dating App Website Mockup</h2>
+				</a>
+				<a
+					href="https://github.com/Ferenc02/Nutrition-APP-PWA-Archive.git"
+					target="_blank"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
+				>
+					<h2 class="text-xl font-bold">Nutrition App PWA</h2>
+				</a>
+
+				<a
+					href="https://portal-fccfa.web.app/index.html"
+					target="_blank"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
+				>
+					<h2 class="text-xl font-bold">Old Website (Projects and Assignments)</h2>
 				</a>
 			</div>
 		</div>
