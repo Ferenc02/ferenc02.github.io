@@ -103,6 +103,20 @@
 					<h2 class="text-xl font-bold">Travel Plan</h2>
 				</a>
 				<a
+					href="https://ferenc02.github.io/Todo-App-Assignment/"
+					target="_blank"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
+				>
+					<h2 class="text-xl font-bold">Todo App (React)</h2>
+				</a>
+				<a
+					href="https://ferenc02.github.io/Todo-App-Revisited-Assignment/"
+					target="_blank"
+					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
+				>
+					<h2 class="text-xl font-bold">Todo App with Blockchain (React)</h2>
+				</a>
+				<a
 					href="https://codejournal-dev.vercel.app/"
 					target="_blank"
 					class=" flex transform-gpu items-center justify-center rounded-lg bg-white p-6 shadow-md transition-transform hover:scale-105 dark:bg-neutral-700"
